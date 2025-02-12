@@ -1,0 +1,18 @@
+<mat-drawer-container class="drawer-container" hasBackdrop="false">
+  <!-- -->
+  <!-- @if(isMenuOpen$ | async){} -->
+
+  <!--     [ngClass]="(isMenuOpen$ | async) ? 'collapsed-side-nav' : ''"
+ -->
+  <mat-drawer
+    class="mat-eleveuation-z3"
+    [ngClass]="(isMenuOpen$ | async) ? 'collapsed-side-nav' : ''"
+    mode="side"
+    [opened]="true"
+  >
+    <app-side-nav></app-side-nav>
+  </mat-drawer>
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

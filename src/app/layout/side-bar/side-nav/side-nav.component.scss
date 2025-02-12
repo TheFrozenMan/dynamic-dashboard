@@ -1,0 +1,98 @@
+
+.side-nav-header{
+  text-align: center;
+
+}
+
+.user-container{
+  padding-top: 20px;
+    padding-bottom: 20px;
+  display: flex;
+      /* width: inherit; */
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: nowrap;
+      align-items: center;
+}
+
+.image-container {
+  height: 80px;
+  width: 80px;
+  z-index: 2;
+  border-radius: 50%;
+  background-color: #fff;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 5px 5px 5px #6c93001a;
+}
+
+
+.image-container-mobile{
+  height: 40px;
+  width: 40px;
+}
+
+
+
+
+
+.user-data{
+  margin : 20px ;
+  font-size: 1rem;
+  line-height: 1rem;
+}
+
+
+.user-role{
+  margin : 20px ;
+  font-size: 0.8rem;
+
+}
+
+
+
+.menu-item{
+  display: flex
+;
+}
+
+
+.badge {
+  display: inline-block;
+  padding: .5em .85em;
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .475rem
+}
+
+.badge.badge-lg {
+  min-width: 1rem;
+  font-size: 0.8rem;
+}
+
+.badge-primary {
+  color: #fff;
+  background-color: #009ef7
+}
+
+.badge-light-primary {
+  color: #009ef7;
+  background-color: #f1faff
+}
+
+
+.d-inline {
+  display: inline!important
+}
+
+
+
+
+
+
+
