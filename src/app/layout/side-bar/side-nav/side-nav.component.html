@@ -2,6 +2,39 @@
   <div class="user-container">
     <img
       class="image-container"
+      src="../../../assets/images/profile-2.jpg"
+      alt="user-info"
+    />
+
+    <div class="user-info">
+      <div class="user-role">
+        <div class="badge badge-lg badge-light-primary d-inline">
+          Administrator
+        </div>
+      </div>
+      <div class="user-data">Ahmad Mihdawi</div>
+    </div>
+  </div>
+  <div class="menu-list">
+    <mat-nav-list>
+      @for(item of menuItem(); track item){
+      <a mat-list-item>
+        <div class="menu-item">
+          <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+          <span matListIconTitle>{{ item.label }}</span>
+        </div>
+      </a>
+      } @empty { div no Item Yet }
+    </mat-nav-list>
+  </div>
+</div>
+
+<!-- DO Not Clean this yet it is future requirement -->
+<!--
+ <div class="side-nav-header">
+  <div class="user-container">
+    <img
+      class="image-container"
       [ngClass]="{ 'image-container-mobile': (isMenuOpen$ | async) }"
       src="../../../assets/images/profile-2.jpg"
       alt="user-info"
@@ -32,4 +65,4 @@
       } @empty { div no Item Yet }
     </mat-nav-list>
   </div>
-</div>
+</div> -->

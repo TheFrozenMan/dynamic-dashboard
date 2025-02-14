@@ -10,6 +10,12 @@ export type MenuItem = {
   route?: any;
 };
 
+/*
+TODO:
+we need to redo the old behaver when we close the
+don't forget to connect the behaver on the side-nav
+*/
+
 @Component({
   selector: 'app-side-nav',
   imports: [MatListModule, MatIconModule, CommonModule],
@@ -20,7 +26,8 @@ export class SideNavComponent {
   isMenuOpen: boolean = true;
   private menuService = inject(MenuService);
   isMenuOpen$ = this.menuService.menuOpen$;
-  private crd = inject(ChangeDetectorRef);
+  //FIXME: don't forget to check from this one later
+  // private crd = inject(ChangeDetectorRef);
 
   menuItem = signal<MenuItem[]>([
     {
@@ -41,8 +48,9 @@ export class SideNavComponent {
   ]);
 
   ngOnInit(): void {
-    this.isMenuOpen$.subscribe(() => {
-      this.crd.detectChanges();
-    });
+    //FIXME: don't forget to check from this one later
+    // this.isMenuOpen$.subscribe(() => {
+    //   this.crd.detectChanges();
+    // });
   }
 }
