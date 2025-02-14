@@ -47,20 +47,20 @@ mat-drawer {
 
 
 
-// mat-drawer-content {
-//   flex-grow: 1; // Ensures it expands
-//   height: 100%;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-// }
+mat-drawer-content {
+  flex-grow: 1; // Ensures it expands
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-// mat-drawer {
-//   max-width: 30vh;
-//   border-radius: 0px !important;
-//   transition: width 0.3s ease-in-out; // Smooth transition when collapsing
-// }
+mat-drawer {
+  max-width: 30vh;
+  border-radius: 0px !important;
+  transition: width 0.3s ease-in-out; // Smooth transition when collapsing
+}
 
-// .collapsed-side-nav {
-//   width: 10vh;
-// }
+.collapsed-side-nav {
+  width: 10vh;
+}
