@@ -3,12 +3,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { MenuService } from '../../../services/menu.service';
-
-export type MenuItem = {
-  icon: string;
-  label: string;
-  route?: any;
-};
+import { MenuItem } from '../../../types/layoutType';
 
 /*
 TODO:
