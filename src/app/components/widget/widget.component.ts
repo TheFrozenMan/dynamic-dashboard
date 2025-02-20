@@ -1,9 +1,9 @@
 import { Widget } from './../../interfaces/widget';
 import { Component, input } from '@angular/core';
-
+import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-widget',
-  imports: [],
+  imports: [MatCardModule],
   templateUrl: './widget.component.html',
   styleUrl: './widget.component.scss',
 })
