@@ -3,7 +3,11 @@
     <mat-card-content>
       <h3 class="m-0">
         {{ data().name }}
-      </h3></mat-card-content
-    >
+        {{ data() | json }}
+
+        <button (click)="changeFristdata(data())">here dum dum</button>
+      </h3>
+      <ng-container [ngComponentOutlet]="data().content"> </ng-container>
+    </mat-card-content>
   </mat-card>
 </div>
