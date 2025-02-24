@@ -1,9 +1,9 @@
-<div class="container mat-eleveuation-z3">
-  <mat-card class="" appearance="outlined">
-    <mat-card-content>
-      <h3 class="m-0">
-        {{ data().name }}
-      </h3></mat-card-content
-    >
-  </mat-card>
+<div class="container mat-elevation-z3">
+  <!-- <mat-card class="" appearance="outlined">
+    <mat-card-c></mat-card-c ontent>
+  </mat-card> -->
+  <h3 class="m-0">
+    {{ data().name }}
+  </h3>
+  <ng-container [ngComponentOutlet]="data().content"> </ng-container>
 </div>
