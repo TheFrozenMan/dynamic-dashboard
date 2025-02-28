@@ -12,12 +12,20 @@ export class DashboardService {
       id: 0,
       name: 'Users Statistic',
       content: UsersComponent,
+      order: 1,
+      hight: 2,
+      width: 2,
+      selection: true,
     },
 
     {
       id: 1,
       name: 'Animal Statistic',
       content: AnimalStatisticComponent,
+      order: 2,
+      hight: 2,
+      width: 2,
+      selection: true,
     },
   ]);
   constructor() {}
