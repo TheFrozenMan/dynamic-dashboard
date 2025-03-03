@@ -1,8 +1,25 @@
-<!--  add no data  -->
+<button (click)="toggleDrag()">
+  {{ dragEnabled() ? "Disable Drag" : "Enable Drag" }}
+</button>
 
-@for(Item of store.widgets() ; track Item){
-<app-widget [data]="Item"></app-widget>
-}@empty {
-
-<app-no-data></app-no-data>
-}
+<div class="grid-container">
+  <mat-grid-list
+    cols="12"
+    rowHeight="200px"
+    [gutterSize]="'10px'"
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+  >
+    @for(Item of store.widgets(); track Item.id) {
+    <mat-grid-tile
+      [colspan]="Item.width"
+      [rowspan]="Item.hight"
+      [style.background]="Item.color"
+      cdkDrag
+      [cdkDragDisabled]="!dragEnabled()"
+    >
+      <app-widget class="item-size" [data]="Item"></app-widget>
+    </mat-grid-tile>
+    } @empty { <app-no-data></app-no-data>}
+  </mat-grid-list>
+</div>

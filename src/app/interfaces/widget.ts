@@ -8,4 +8,5 @@ export interface Widget {
   hight?: number;
   width?: number;
   selection?: boolean;
+  color?: string;
 }
