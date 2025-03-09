@@ -10,8 +10,4 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class WidgetComponent {
   data = input.required<Widget>();
-
-  changeFristdata(item: any) {
-    item.name = 'haha';
-  }
 }

@@ -1,8 +1,109 @@
-<!--  add no data  -->
+<div class="action-group mt-1 mb-2">
+  <div class="settings-group">
+    <button class="mr-2 mr-2" mat-button mat-flat-button (click)="toggleDrag()">
+      {{ !dragEnabled() ? "Enable Drag" : "Disable Drag" }}
+      @if(dragEnabled()){
+      <mat-icon>cancel</mat-icon>
+      }@else {
+      <mat-icon>check</mat-icon>
+      }
+    </button>
 
-@for(Item of store.widgets() ; track Item){
-<app-widget [data]="Item"></app-widget>
-}@empty {
+    <button class="mr-2" mat-button mat-flat-button (click)="toggleDrag()">
+      {{ !dragEnabled() ? "Enable Edit" : "Disable Edit" }}
+      @if(dragEnabled()){
+      <mat-icon>cancel</mat-icon>
+      }@else {
+      <mat-icon>check</mat-icon>
+      }
+    </button>
+  </div>
+  <app-widget-menu></app-widget-menu>
+</div>
 
-<app-no-data></app-no-data>
-}
+<div class="grid-container" [ngClass]="dragEnabled() ? 'darg-drop-cursor' : ''">
+  <mat-grid-list
+    cols="4"
+    rowHeight="200px"
+    [gutterSize]="'10px'"
+    cdkDropList
+    (cdkDropListDropped)="drop($event)"
+  >
+    @for(Item of store.widgets(); track Item.id) {
+    <mat-grid-tile
+      [colspan]="Item.width"
+      [rowspan]="Item.hight"
+      [style.background]="Item.color"
+      cdkDrag
+      [cdkDragDisabled]="!dragEnabled()"
+    >
+      <app-widget class="item-size" [data]="Item"></app-widget>
+    </mat-grid-tile>
+    } @empty { <app-no-data></app-no-data>}
+  </mat-grid-list>
+</div>
+
+<!--
+<mat-grid-list cols="4" rowHeight="250px" [gutterSize]="'10px'" cdkDropList (cdkDropListDropped)="drop($event)">
+  @for(Item of widgets(); track Item.id) {
+  <mat-grid-tile [colspan]="Item.width" [rowspan]="Item.height" [style.background]="Item.color" cdkDrag
+      [cdkDragDisabled]="!store.dragEnabled()">
+      @if(store.EnableEdit()){ <app-widget class="widget-item" [data]="Item"></app-widget> }@else{
+      {{ Item.order}}
+      <div class="container">
+          <div class="removeWidget">
+              <button (click)="removeWidgetById(Item.id)">
+                  <div class="example-button-container">
+                      <a mat-fab extended routerLink=".">
+                          Remove item
+                      </a>
+                  </div>
+              </button>
+          </div>
+
+          <div class="widget-item edit-mode">
+              <div style="	display: flex
+          ;
+              margin: 20px;
+              align-content: center;
+              justify-content: center;
+              align-items: center;">
+
+
+                  <div>
+                      height : <mat-button-toggle-group name="height" aria-label="height" [value]="Item.height"
+                          (change)="onChangeHeight($event,Item)">
+
+                          <mat-button-toggle *ngFor="let num of heights" [value]="num">
+                              {{ num }}
+                          </mat-button-toggle>
+
+                      </mat-button-toggle-group>
+
+                      <br>
+                      <br>
+
+                      width :
+
+                      <mat-button-toggle-group name="width" aria-label="width" [value]="Item.width"
+                          (change)="onChangeWidth($event,Item)">
+                          <mat-button-toggle *ngFor="let num of widths" [value]="num">
+                              {{ num }}
+                          </mat-button-toggle>
+                      </mat-button-toggle-group>
+                  </div>
+
+
+
+              </div>
+
+          </div>
+      </div>
+      }
+
+  </mat-grid-tile>
+  }
+  @empty {
+  No data found
+  }
+</mat-grid-list> -->

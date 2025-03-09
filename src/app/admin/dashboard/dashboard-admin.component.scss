@@ -1,0 +1,29 @@
+// .cdk-drag-placeholder {
+//   opacity: 0.3; /* Ghost effect when dragging */
+// }
+
+// .cdk-drag-preview {
+//   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+//   transform: rotate(2deg);
+// }
+
+// .mat-grid-tile {
+//   transition: transform 0.2s ease-in-out;
+// }
+
+
+.darg-drop-cursor {
+  cursor: move;
+}
+
+.item-size {
+  height: 100%;
+  width: 100%
+}
+
+
+.action-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

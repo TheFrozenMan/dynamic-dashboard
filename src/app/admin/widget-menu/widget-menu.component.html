@@ -1,0 +1,10 @@
+<button mat-button mat-flat-button [matMenuTriggerFor]="menu">
+  <mat-icon>add</mat-icon>
+  Add Widgets
+</button>
+
+<mat-menu #menu="matMenu">
+  @for(widget of widgets ; track widget.id ){
+  <button mat-menu-item>Item 1</button>
+  }@empty {}
+</mat-menu>
