@@ -2,7 +2,6 @@ import { WidgetComponent } from './../../components/widget/widget.component';
 import { CommonModule } from '@angular/common';
 import { Component, inject, signal } from '@angular/core';
 import { SharedModule } from '../../shared/shared.module';
-import { Widget } from '../../interfaces/widget';
 import { DashboardService } from '../../services/dashboard.service';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {
@@ -10,6 +9,9 @@ import {
   DragDropModule,
   moveItemInArray,
 } from '@angular/cdk/drag-drop';
+import { WidgetMenuComponent } from '../widget-menu/widget-menu.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-dashboard-admin',
@@ -19,6 +21,9 @@ import {
     WidgetComponent,
     MatGridListModule,
     DragDropModule,
+    MatButtonModule,
+    MatIconModule,
+    WidgetMenuComponent,
   ],
   templateUrl: './dashboard-admin.component.html',
   providers: [DashboardService],
@@ -27,7 +32,8 @@ import {
 export class DashboardAdminComponent {
   store = inject(DashboardService);
   dataExist: boolean = true;
-
+  widths: number[] = Array.from({ length: 4 }, (_, i) => i + 1);
+  heights: number[] = Array.from({ length: 4 }, (_, i) => i + 1);
   dragEnabled = signal(false); // Initially disabled
 
   toggleDrag() {

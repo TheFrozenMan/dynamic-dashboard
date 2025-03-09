@@ -12,8 +12,18 @@
 // }
 
 
+.darg-drop-cursor {
+  cursor: move;
+}
 
-.item-size{
+.item-size {
   height: 100%;
   width: 100%
+}
+
+
+.action-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

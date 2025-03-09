@@ -9,4 +9,5 @@ export interface Widget {
   width?: number;
   selection?: boolean;
   color?: string;
+  thumbnail?: Type<unknown>;
 }
