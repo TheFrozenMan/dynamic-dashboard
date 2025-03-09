@@ -4,7 +4,18 @@
 </button>
 
 <mat-menu #menu="matMenu">
-  @for(widget of widgets ; track widget.id ){
-  <button mat-menu-item>Item 1</button>
-  }@empty {}
+  @for (widget of widgets ; track widget.id) {
+  <button mat-menu-item>
+    {{ widget.name }}
+  </button>
+
+  }@empty { no data }
+
+  <!-- <div cdkDropList class="example-list">  </div>
+    @for (widget of widgets ; track widget.id) {
+    <button mat-menu-item class="example-box" cdkDrag>
+      {{ widget.name }}
+      <img *cdkDragPreview [src]="widget.thumbnail" [alt]="widget.name" />
+    </button>
+    } -->
 </mat-menu>
