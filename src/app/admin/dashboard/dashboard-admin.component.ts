@@ -55,5 +55,5 @@ export class DashboardAdminComponent {
     });
   }
 
-  //TODO: re think the way of passing the content it is not spoues to be a text
+  //TODO: re think the way of passing the content it is not spouse to be a text
 }

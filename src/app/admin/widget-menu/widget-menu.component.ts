@@ -28,7 +28,7 @@ import { DashboardService } from '../../services/dashboard.service';
 export class WidgetMenuComponent {
   store = inject(DashboardService);
 
-  //FIXME: retrun this to read form WidgetAdded()
+  //FIXME: return this to read form WidgetAdded()
   // widgets = this.store.WidgetAdded();
 
   widgets = this.store.widgets();
