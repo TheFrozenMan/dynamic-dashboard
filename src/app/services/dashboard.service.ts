@@ -17,6 +17,8 @@ export class DashboardService {
       width: 3,
       selection: true,
       color: 'lightblue',
+      thumbnail:
+        "https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone_(film)#/media/File:Harry_Potter_and_the_Philosopher's_Stone_banner.jpg",
     },
 
     {
@@ -28,6 +30,8 @@ export class DashboardService {
       width: 1,
       selection: true,
       color: 'lightgreen',
+      thumbnail:
+        'https://upload.wikimedia.org/wikipedia/en/c/c0/Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg',
     },
 
     {
@@ -39,6 +43,8 @@ export class DashboardService {
       width: 1,
       selection: true,
       color: 'lightpink',
+      thumbnail:
+        'https://en.wikipedia.org/wiki/Harry_Potter_and_the_Prisoner_of_Azkaban_(film)#/media/File:Prisoner_of_azkaban_UK_poster.jpg',
     },
 
     {
@@ -50,6 +56,8 @@ export class DashboardService {
       width: 2,
       selection: true,
       color: '#DDBDF1',
+      thumbnail:
+        'https://en.wikipedia.org/wiki/Harry_Potter_and_the_Goblet_of_Fire_(film)#/media/File:Harry_Potter_and_the_Goblet_of_Fire_Poster.jpg',
     },
   ]);
 
