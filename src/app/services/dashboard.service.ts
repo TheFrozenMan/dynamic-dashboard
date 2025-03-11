@@ -63,11 +63,9 @@ export class DashboardService {
 
   addedWidgets = signal<Widget[]>([]);
 
-  WidgetAdded = computed(() => {
-    const addedId = this.addedWidgets().map((w) => w.id);
-    return this.widgets().filter((w) => {
-      !addedId.includes(w.id);
-    });
+  WidgetNotAdded = computed(() => {
+    const addedIds = this.addedWidgets().map((w) => w.id);
+    return this.widgets().filter((w) => !addedIds.includes(w.id));
   });
 
   addWidget(w: Widget) {
