@@ -28,11 +28,6 @@ import { DashboardService } from '../../services/dashboard.service';
 export class WidgetMenuComponent {
   store = inject(DashboardService);
 
-  //FIXME: return this to read form WidgetAdded()
-  // widgets = this.store.WidgetAdded();
-
-  widgets = this.store.widgets();
-
   //FIXME: add drag drop to the menu later
 
   // drop(event: any) {
