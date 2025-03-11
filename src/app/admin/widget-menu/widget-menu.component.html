@@ -5,7 +5,7 @@
 
 <mat-menu #menu="matMenu">
   @for (widget of widgets ; track widget.id) {
-  <button mat-menu-item>
+  <button mat-menu-item (click)="store.addWidget(widget)">
     {{ widget.name }}
   </button>
 

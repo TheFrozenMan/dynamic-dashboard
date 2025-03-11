@@ -1,48 +1,64 @@
-<div class="action-group mt-1 mb-2">
-  <div class="settings-group">
-    <button class="mr-2 mr-2" mat-button mat-flat-button (click)="toggleDrag()">
-      {{ !dragEnabled() ? "Enable Drag" : "Disable Drag" }}
-      @if(dragEnabled()){
-      <mat-icon>cancel</mat-icon>
-      }@else {
-      <mat-icon>check</mat-icon>
-      }
-    </button>
+<div class="container">
+  <div class="action-group mt-1 mb-2 mr-1 ml-1">
+    <div class="settings-group">
+      <button
+        class="mr-2 mr-2"
+        mat-button
+        mat-flat-button
+        (click)="toggleDrag()"
+      >
+        {{ !dragEnabled() ? "Enable Drag" : "Disable Drag" }}
+        @if(dragEnabled()){
+        <mat-icon>cancel</mat-icon>
+        }@else {
+        <mat-icon>check</mat-icon>
+        }
+      </button>
 
-    <button class="mr-2" mat-button mat-flat-button (click)="toggleDrag()">
-      {{ !dragEnabled() ? "Enable Edit" : "Disable Edit" }}
-      @if(dragEnabled()){
-      <mat-icon>cancel</mat-icon>
-      }@else {
-      <mat-icon>check</mat-icon>
-      }
-    </button>
+      <button class="mr-2" mat-button mat-flat-button (click)="toggleDrag()">
+        {{ !dragEnabled() ? "Enable Edit" : "Disable Edit" }}
+        @if(dragEnabled()){
+        <mat-icon>cancel</mat-icon>
+        }@else {
+        <mat-icon>check</mat-icon>
+        }
+      </button>
+    </div>
+    <app-widget-menu></app-widget-menu>
   </div>
-  <app-widget-menu></app-widget-menu>
-</div>
 
-<div class="grid-container" [ngClass]="dragEnabled() ? 'darg-drop-cursor' : ''">
-  <mat-grid-list
-    cols="4"
-    rowHeight="200px"
-    [gutterSize]="'10px'"
-    cdkDropList
-    (cdkDropListDropped)="drop($event)"
+  <div
+    class="grid-container"
+    [ngClass]="dragEnabled() ? 'darg-drop-cursor' : ''"
   >
-    @for(Item of store.widgets(); track Item.id) {
-    <mat-grid-tile
-      [colspan]="Item.width"
-      [rowspan]="Item.hight"
-      [style.background]="Item.color"
-      cdkDrag
-      [cdkDragDisabled]="!dragEnabled()"
+    <mat-grid-list
+      cols="4"
+      rowHeight="200px"
+      [gutterSize]="'10px'"
+      cdkDropList
+      (cdkDropListDropped)="drop($event)"
     >
-      <app-widget class="item-size" [data]="Item"></app-widget>
-    </mat-grid-tile>
-    } @empty { <app-no-data></app-no-data>}
-  </mat-grid-list>
-</div>
+      @for(Item of store.addedWidgets(); track Item.id) {
+      <mat-grid-tile
+        [colspan]="Item.width"
+        [rowspan]="Item.hight"
+        cdkDrag
+        [cdkDragDisabled]="!dragEnabled()"
+      >
+        <!--         [style.background]="Item.color"
+ -->
+        <app-widget class="item-size" [data]="Item"></app-widget>
+      </mat-grid-tile>
+      } @empty {
 
+      <div style="height: inherit">
+        <app-no-data></app-no-data>
+      </div>
+
+      }
+    </mat-grid-list>
+  </div>
+</div>
 <!--
 <mat-grid-list cols="4" rowHeight="250px" [gutterSize]="'10px'" cdkDropList (cdkDropListDropped)="drop($event)">
   @for(Item of widgets(); track Item.id) {

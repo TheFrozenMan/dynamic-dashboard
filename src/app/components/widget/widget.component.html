@@ -1,10 +1,16 @@
-<div class="container">
-  <!-- <mat-card class="" appearance="outlined">
-    <mat-card-c></mat-card-c ontent>
-  </mat-card> -->
-
-  <h3 class="m-0">
-    {{ data().name }}
-  </h3>
-  <ng-container [ngComponentOutlet]="data().content"> </ng-container>
+<div class="card container">
+  <div class="card-info">
+    <div class="widget-info">
+      <h3 class="m-0">
+        {{ data().name }}
+      </h3>
+      <ng-container [ngComponentOutlet]="data().content"> </ng-container>
+    </div>
+  </div>
 </div>
+
+<!-- <div class="card">
+
+    <p class="title">Magic Card</p>
+  </div>
+</div> -->
